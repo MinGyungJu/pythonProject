@@ -7,10 +7,23 @@ from bs4 import BeautifulSoup
 from urllib import parse
 from urllib import request
 
+"""
+    함수명 :
+    인자      :
+    리턴값 :
+    역할   :
+"""
 def enum_links(html,base):
     #-------------------------------------
+    soup = BeautifulSoup(html,'html.parser')
+    links = soup.select('a')
+    # print(links)
 
     result = []
+    for a in links:
+        href = a.attrs['href']
+        parse.urljoin(base,href)
+        print(url)
     return result
 
 

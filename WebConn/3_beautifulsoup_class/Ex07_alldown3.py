@@ -19,7 +19,7 @@ import Ex07_alldown2
 # (3) 이미 처리한 파일인지 확인하기 위한 변수
 proc_files = {}
 
-# HTML을 분석하고 다운받는 함수
+# HTML을 분석하고 다운받는 함수 - 다운받은애가 있으면 pass 없으면 진행
 def analyze_html(url, root_url):
     # (1)
     print("analyze_html=", url)
@@ -27,7 +27,7 @@ def analyze_html(url, root_url):
     if savepath is None: return
     if savepath in proc_files: return # 이미 처리된 파일이면 실행하지 않음
     proc_files[savepath] = True
-    # print(proc_files)
+    print(proc_files)
 
 
     # (2) 링크 추출

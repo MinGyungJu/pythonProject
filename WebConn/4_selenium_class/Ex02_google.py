@@ -6,9 +6,17 @@
     <input name='q' value='파이썬'~~ >
     그리고 'google검색' 버튼이 type='submit' 인거 확인
 '''
+from selenium import  webdriver
 
-# [1]
-
+# 1. webdriver 객체생성
+driver = webdriver.Chrome('./webdriver/chromedriver.exe')
+driver.implicitly_wait(3)
+# 2. 페이지 접근
+driver.get('https://www.naver.com')
 #----------------------------------------------
 # [2]
+search_bt = driver.find_element_by_name('query')
+search_bt.send_keys('전병욱')
+search_bt.submit()
+
 
